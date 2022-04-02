@@ -1,0 +1,15 @@
+__pycache__/
+.coverage
+.cache
+.DS_Store
+.idea/
+.venv/
+.vscode/
+*.log
+*.pyc
+/vmdata
+build
+/venv
+**/.devcontainer
+htmlcov
+

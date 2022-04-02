@@ -1,0 +1,34 @@
+#!/bin/bash
+# Script sets up everything needed to have this project running locally on osx
+
+
+# Make sure not in a virtualenv
+if [[ "$VIRTUAL_ENV" != "" ]]; then
+    echo "Virtual environment detected. Deactivate and retry."
+    exit 1
+fi
+
+
+# Create and provision using docker
+# Check for docker
+#if [ -z $(which docker) ]; then
+#    echo "ERROR Docker missing, please install it before proceeding"
+#fi
+#echo "Starting docker-compose"
+#docker-compose up -d
+
+
+# Create virtualenv for the project, pip install all the things
+VIRTUALENV_DIR=.venv
+virtualenv $VIRTUALENV_DIR --python=python3.8
+. $VIRTUALENV_DIR/bin/activate
+pip install -r requirements.txt
+echo ""
+echo ""
+
+
+# Setup done message
+echo ""
+echo "Setup completed. Run to activate venv:"
+echo ""
+echo "source ./.venv/bin/activate"
